@@ -20,7 +20,7 @@ const Course = require("./models/Course"); // Make sure this matches your file n
 
 // Import Routes (Ensure these paths are correct relative to server.js)
 const authRoutes = require('./routes/auth');
-const courseRoutes = require('./routes/Courses'); // Correctly importing your courses router!
+const courseRoutes = require('./routes/courses'); // Correctly importing your courses router!
 const contactRoutes = require('./routes/Contact');
 const staffRoutes = require('./routes/Staff');
 
