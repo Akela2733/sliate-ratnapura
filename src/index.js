@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// src/index.js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import { BrowserRouter as Router } from "react-router-dom"; // Ensure BrowserRouter is imported
+import { AuthProvider } from "./context/AuthContext"; // Import AuthProvider
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// IMPORTANT: Remove ToastContainer import and rendering from here.
+// import "react-toastify/dist/ReactToastify.css"; // Keep CSS import if needed elsewhere, but App.js handles it
+// import { ToastContainer } from "react-toastify"; // REMOVE THIS IMPORT
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      {/* Router must wrap AuthProvider */}
+      <AuthProvider>
+        {/* App component is wrapped by AuthProvider */}
+        <App />
+        {/* REMOVE ToastContainer from here */}
+        {/*
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        */}
+      </AuthProvider>
+    </Router>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

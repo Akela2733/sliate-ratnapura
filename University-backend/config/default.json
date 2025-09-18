@@ -1,0 +1,5 @@
+
+{
+  "jwtSecret": "260d22ba-047f-486c-9a40-2898d727d929",
+  "mongoURI": "mongodb+srv://sakuniakela273:tSNWY3M4VVbKAk7c@cluster0.xyoaohv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+}
